@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-blue: #1D6FA4;
+  --color-brand-navy: #0D2137;
+  --color-brand-green: #00A36C;
+  --color-brand-amber: #F5A623;
+  --color-brand-white: #FFFFFF;
+  --color-brand-surface: #F8F9FA;
+  --color-brand-border: #E8EDF2;
+  --color-brand-text: #2D3748;
+  --color-brand-muted: #718096;
+
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-6: 48px;
+  --spacing-9: 72px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+
+  --shadow-subtle: 0 2px 16px rgba(29, 111, 164, 0.07);
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-surface text-brand-text antialiased text-[15px] leading-relaxed;
+  }
+  
+  h1 {
+    @apply text-[28px] md:text-[44px] font-semibold leading-tight text-brand-navy;
+  }
+
+  h2 {
+    @apply text-[30px] font-semibold leading-tight text-brand-navy;
+  }
+
+  h3 {
+    @apply text-[18px] font-semibold text-brand-navy;
+  }
+
+  caption {
+    @apply text-[13px] text-brand-muted;
+  }
+
+  label {
+    @apply font-medium text-brand-text;
+  }
+
+  input, select, textarea {
+    @apply min-h-[48px];
+  }
+}
+
+.cta-pill {
+  @apply bg-brand-blue text-white px-32 py-16 rounded-lg font-medium hover:bg-brand-blue/90 transition-all shadow-subtle;
+}
+
+.card-standard {
+  @apply bg-white p-24 rounded-md shadow-subtle border border-brand-border;
+}
+
+.input-standard {
+  @apply bg-white border border-brand-border rounded-sm px-16 py-12 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all;
+}
+
+.badge-standard {
+  @apply px-8 py-4 rounded-sm text-[13px] font-medium;
+}
+
+/* Prevent zoom on inputs for iOS while allowing page zoom */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+.tap-target {
+  @apply min-h-[48px] flex items-center;
+}
