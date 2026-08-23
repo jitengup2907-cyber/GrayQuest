@@ -4,15 +4,15 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   
-  --color-brand-blue: #1D6FA4;
-  --color-brand-navy: #0D2137;
-  --color-brand-green: #00A36C;
-  --color-brand-amber: #F5A623;
-  --color-brand-white: #FFFFFF;
-  --color-brand-surface: #F8F9FA;
-  --color-brand-border: #E8EDF2;
-  --color-brand-text: #2D3748;
-  --color-brand-muted: #718096;
+  --color-brand-blue: #5D38F5;
+  --color-brand-navy: #0D1B3E;
+  --color-brand-green: #00D084;
+  --color-brand-amber: #FFB800;
+  --color-brand-white: #FAFBFD;
+  --color-brand-surface: #F3F5F9;
+  --color-brand-border: #E2E8F0;
+  --color-brand-text: #1E293B;
+  --color-brand-muted: #64748B;
 
   --spacing-1: 8px;
   --spacing-2: 16px;
@@ -25,24 +25,33 @@
   --radius-md: 16px;
   --radius-lg: 32px;
 
-  --shadow-subtle: 0 2px 16px rgba(29, 111, 164, 0.07);
+  --shadow-subtle: 0 2px 16px rgba(29, 111, 164, 0.05);
 }
 
 @layer base {
   body {
-    @apply font-sans bg-brand-surface text-brand-text antialiased text-[15px] leading-relaxed;
+    @apply font-sans bg-[#F4F6FA] text-brand-text antialiased text-[15px] leading-relaxed;
   }
   
   h1 {
     @apply text-[28px] md:text-[44px] font-semibold leading-tight text-brand-navy;
+    color: var(--color-brand-navy) !important;
   }
 
   h2 {
     @apply text-[30px] font-semibold leading-tight text-brand-navy;
+    color: var(--color-brand-navy) !important;
   }
 
   h3 {
     @apply text-[18px] font-semibold text-brand-navy;
+    color: var(--color-brand-navy) !important;
+  }
+
+  /* Support explicit text-white overrides on dark hero banners and inverted backgrounds */
+  h1.text-white, h2.text-white, h3.text-white,
+  h1[class*="text-white"], h2[class*="text-white"], h3[class*="text-white"] {
+    color: #ffffff !important;
   }
 
   caption {
